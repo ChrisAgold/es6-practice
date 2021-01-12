@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES5 VS ES6</title>
+
+</head>
+
+<body>
+<button>Test</button>
+<script>
+    // Defining Variables //
+
+    // ES5
+    //var name = 'Max';
+
+    // ES6
+    //let name = 'Max';
+
+    // Block Scope //
+    // let is for block scoping, {}
+    if (true) {
+        let age = 27;
+        console.log(age); // will return age since inside the block scope
+    }
+    console.log(age); // will return undefined since age is defined in a block (between {})
+
+    // array
+    const AGES = [27, 29, 31];
+    AGES.push(25); // adds to array
+    console.log(AGES);
+
+    // Hoisting //
+    // ES5
+    age = 27;
+    console.log(age);
+    var age; // still runs
+
+    // ES6 (define variables before being used)
+    let age;
+    age = 27;
+    console.log(age); // runs if everything is defined above console.log
+
+    function doSmth() {
+        age = 27;
+    }
+
+    let age;
+    doSmth();
+    console.log(age); // still works since age is defined before being used
+
+    // functions //
+    // Es5
+    function fn() {
+        console.log("Hello!");
+    }
+    fn();
+
+    // Es6
+    var fn = () => console.log("Hello!");
+    fn();
+
+    // for multiple arguments
+    var fn = () => {
+        let a = 2;
+        let b = 3;
+        return a + b;
+    };
+    console.log(fn());
+
+    // "this" keyword functions //
+    // es5
+    function fn() {
+        console.log(this); // returns window object
+    }
+    fn();
+
+    // es6
+    var fn2 = () => console.log(this); // still refers to window object
+    fn2();
+
+
+</script>
+</body>
+</html>
